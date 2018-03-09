@@ -1,0 +1,67 @@
+﻿@model IEnumerable<WebDocs.Models.WebDoc>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <!-- Remove inherited from implementation
+    <th>
+        @Html.DisplayNameFor(model => model.ActorID)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.ActorPropID)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.ActorPropTitle)
+    </th>
+        -->
+        <th>
+            @Html.DisplayNameFor(model => model.WebDocOwnerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WebDocTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WebDocNumber)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <!-- Remove inherited from implementation
+        <td>
+            @Html.DisplayFor(modelItem => item.ActorID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActorPropID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActorPropTitle)
+        </td>
+            -->
+        <td>
+            @Html.DisplayFor(modelItem => item.WebDocOwnerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WebDocTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WebDocNumber)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.WebDocID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.WebDocID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.WebDocID })
+        </td>
+    </tr>
+    }
+
+    </table>
