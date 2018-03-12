@@ -8,6 +8,7 @@ using WebDocs.Proxy;
 
 namespace WebDocs.Controllers
 {
+    [Authorize]
     public class WebDocsController : Controller
     {
         // GET: WebDocs
